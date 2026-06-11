@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# codebase-comprehender/scripts/scan.sh — 项目初始化扫描
+# scan.sh — 项目初始化扫描
 # 用法: bash scan.sh <project_root>
 
 set -euo pipefail
 PROJECT_ROOT="${1:-.}"
 cd "$PROJECT_ROOT"
 
-echo "=== 项目规模 ==="
+echo "=== 📊 项目规模 ==="
 find . -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.js' -o -name '*.jsx' -o -name '*.py' -o -name '*.go' -o -name '*.rs' -o -name '*.java' -o -name '*.rb' -o -name '*.php' -o -name '*.vue' -o -name '*.svelte' \) \
   -not -path '*/node_modules/*' -not -path '*/.git/*' -not -path '*/vendor/*' -not -path '*/dist/*' -not -path '*/build/*' -not -path '*/__pycache__/*' -not -path '*/target/*' | wc -l
 
